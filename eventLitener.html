@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+<body>
+    <button class="button">Click</button>
+
+    <script>
+        // using eventListener instead of onclick
+        const buttonElement = document.querySelector('.button');
+    
+        // add eventlistener 'click'
+        const eventListener = () => {
+            console.log('click');
+        }
+        buttonElement.addEventListener('click', eventListener); 
+
+        // we can add mutiple eventlisteners to an element
+        buttonElement.addEventListener('click', function(){
+            console.log('click2');
+        });
+
+        // removing an eventListener 
+        // we can remove an eventListener from an element by following this steps, 
+        // first, we need to save the eventListener "() => {}" in a variable so we can target the function while removing with removeEventListener() function.
+        buttonElement.removeEventListener('click', eventListener);
+        // by so doing, we have successfully remove the eventListener from the button elem
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11 lession Exercises</title>
+</head>
+<body>
+    <script>
+        let numbers = [10, 20, 30];
+        // change the last property.
+        numbers[numbers.length - 1] = 99;
+        console.log(numbers);
+
+        function getLastValue(arr){
+            return arr[numbers.length - 1];
+        }
+        const myArray = [
+            55, 44, 33, 88, 99, 34
+        ];
+        const lastNumber = getLastValue(myArray);
+        console.log(`lastNumber in [${myArray}] is`, lastNumber);
+        
+        window.console.clear();
+
+        function arraySwap(arr){
+            let first = arr[0];
+            let last = arr[arr.length - 1];
+            
+            arr[0] = last;
+            arr[arr.length - 1] = first;
+            return arr;
+        };
+        console.log(arraySwap(myArray));
+
+        console.clear();
+
+        
+        // 11d
+        let stop = 0;
+        let num = 0;
+        let increament = 2;
+
+        while (stop <= 4) {
+            console.log(num += increament);
+            stop++; 
+        };
+        // ||||||||||||||||||||||||||||||||||||||||||||||
+        let count = 1;
+        while (count <= 5){
+            console.log(count)
+            count ++ ;
+        };
+        // ||||||||||||||||||||||||||||||||||||||||||||||
+        const arr = [-4, 55, 66, 77, 88];
+
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] += 1;
+        }
+        console.log(arr);
+
+        console.clear();
+
+        function addOne(arr){
+            for (let i = 0; i < arr.length; i++) {
+                arr[i] += 1;
+            };
+            return arr;
+        };
+        console.log(addOne([-4, 55, 66, 77, 88]));
+        console.clear();
+        
+        const exercises = {
+            addNum (arr, num) {
+                for (let i = 0; i < arr.length; i++) {
+                    arr[i] += num;
+                };
+                return arr;
+            },
+            addArrays(arr1, arr2) {
+                if (arr1.length !== arr2.length)
+                    return 'Array must be same length.'
+
+                let addedArray = []
+                for (let i = 0; i < arr1.length; i++) {
+                    addedArray.push(arr1[i] + arr1[i])
+                };
+                return addedArray;
+            },
+            countPositive(arr) {
+                let isPositive = 0;
+                for (let i = 0; i < arr.length; i++){
+                    if (arr[i] > 0){
+                        isPositive++;
+                    };
+                }; 
+                return isPositive;
+            },
+            minMax(arr) {
+                for (let i = 0; i < arr.length; i++) {
+                    if (typeof arr[i] === 'string')
+                        return {min: null, max: null};
+                }
+                let min = 0;
+                let max = 0;
+                // for min
+                let minCount = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    for (j = 0; j < arr.length; j++) {
+                        if (arr[i] <= arr[j]) {
+                            minCount ++;
+                            if (minCount === arr.length) {
+                                min = arr[i];
+                            }
+                        }
+                    } 
+                    if (minCount !== arr.length){
+                        minCount = 0;
+                    }
+                }
+                // for max
+                let maxCount = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    for (j = 0; j < arr.length; j++) {
+                        if (arr[i] >= arr[j]) {
+                            minCount ++;
+                            if (minCount === arr.length) {
+                                max = arr[i];
+                            }
+                        }
+                    } 
+                    if (minCount !== arr.length){
+                        minCount = 0;
+                    }
+                }
+                return {min, max};
+            },  // function closing brases
+            findIndex(array, word){
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i] === word){
+                        return i;
+                    }
+                };
+                return -1;
+            }, // function closing brases
+        }
+        // console.log(exercises.addNum([-4, 55, 66, 77, 88], 4))
+        // console.log(exercises.addArrays([1, 2, 3], [1, 2, 3]))
+        
+        // console.log(exercises.countPositive([1, -2, 3]));
+        // console.log(exercises.minMax([1, 1, 55]));
+
+        // console.log(exercises.findIndex(['hello', 'How are you', 'JavaScripts'], 'JavaScripts'))
+
+    </script>
+</body>
+</html>
+
+
+

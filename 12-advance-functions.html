@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+    <script>
+        // hoisting mean we can call a function before creating it 
+        // example
+        greeting()
+        function greeting() {
+            console.log('Hey there!');
+        } // this is an example of hoisting function()
+
+        // functions are value
+        const function1 = function greeting() {
+            console.log('Hello world!');
+        };
+        function1()  // calling this function before it declaration will result into an error.
+
+        // since we can call the function with its variable name, we dont need the the function name(greeting) a gain. We just need to say const functionName = function() {...}. And creating functions like this, we call the function and anonymus function.
+
+        // anonnymus function
+        // that is defining a function without a name; using its variable name as its name
+        const function2 = function() {
+            return console.log('Hello world!');
+        };
+        function2()
+
+        // passing function into another function 
+        function run(func){
+            func()
+        }
+        function func1() {
+            console.log('Function get called in another function!')
+        }
+
+        run(function(){
+            console.log('Function get called in another function!')
+        })
+        // or 
+        run(func1);
+
+
+
+        // asynchronise
+        setTimeout(function(){
+            console.log('Time - out')
+        }, 3000)
+
+        // repeat a function after some sec again and again 
+        // the function takes 2 params. 1 for the function to be called again and again 2 for the time to wait b4 another call
+        const setinterval = function() {
+            setInterval(function() {
+                console.log('interval every 1secs!')
+            }, 1000);
+        }
+
+        
+        
+        // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        // tring decorator on my own
+        
+        function makePretty(func) {
+            function inner(param){
+                return func()
+            }
+            return inner
+        }
+
+        makePretty(function2)(55)
+        // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+        // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        // arrow function
+        // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        
+        const regularFunction = function(param1, param2) {
+            console.log('Hello')
+        }
+        // same as  but we call this arrow function
+        const arrowFunction = (param1, param2) => {
+            console.log('Hello');
+            return param1 + param2
+        }
+        // Features of arrow function: 
+        // when its param is just one, we dont need to use () to enclose it    i.e
+        const oneParam = param => {
+            console.log(param, 'is the paramenter of the arrow function \'oneParam\'')
+        };
+        oneParam(555);
+
+        const oneLine = () => {
+            return 5 + 6;
+        }
+        // Or: when our funtion only has one line, we can remove the { } and retrun key word;
+
+
+        const oneLine2 = () => 5 + 6;
+        // Hint: It is just like lambda in python.
+        console.log(oneLine());
+        console.log(oneLine2());
+
+        const object2 = {
+            method: () => {
+                // not the best way
+            }, 
+
+            method1: function method() {
+                // not the best way 
+            },
+
+            method() {
+                // best way to define a function in an object
+            }
+        };
+
+        const oneLineFunc = param => param + param;
+        console['log'](oneLineFunc(5));
+
+        // using with forEach 
+        const array = [
+            'Daniel', 'Samuel', 'Kemisola', 'Iyanu'
+        ];
+        // looping through using forEach
+        array.forEach((value, index) => console.log(value, index));
+
+
+
+        // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        // arrow function ends
+        // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+        console.clear();
+
+        // filter
+        /* arr.filter((value, index) => {
+            filter returns only true and false under a specific condiction.
+            
+            if (value === something){
+                return false; will remove the value that is === to that 'something' in that arr and will not add it to the new array that is going to be returned by the filter function.
+            } else {
+                return true; will add the value into the new array that is going to be returned
+            }
+        }) 
+
+        arr.filter((value, index) => {
+            return true; this will include all the value in the arr to the new array that is going to be returned by the filter function.
+        })
+        arr.filter((value, index) => {
+            return false; this will not include all the value in the arr to the new array that is going to be returned by the filter function.
+        })
+        
+        */
+        const newArray = [4, -3, 5]
+        
+        const filteredArray = newArray.filter((value, index) => value > 0);
+        // or newArray.filter(function(value, index){return value > 0})
+        // or newArray.filter((value, index) => {return value > 0});
+        
+        // map
+        /* 
+        map create another array and save all the returned value inside the array
+        
+        const mappedArray = newArray.map(value, index)  => {
+            return value + 1
+        }; */
+        const mappedArray = newArray.map(value  => value + 1);
+
+        console.log({newArray});
+        console.log({filteredArray});
+        console.log({mappedArray})
+
+        console.clear();
+
+
+        // exercises
+        const multiply = (num1, num2) => num1 * num2;
+        console.log(multiply(5, 4));
+
+        const countPositive = arr => {
+            return arr.filter(value => value > 0).length + ` values are positive`;
+        };
+        console.log(countPositive([4, 5, -4, 5, -8, 4]));
+
+        const addNum = function(array, num){
+            return array.map(value => value + num);
+        };
+        // using oneline function;
+        const addNum2 = (array, num) => array.map(value => value + num);
+        
+        console.log(addNum([1, 2, 3, 4, 5, 6], 2))
+        console.log(addNum2([1, 2, 3, 4, 5, 6], 2))
+
+        const removeEgg = (food) => {
+            // const newArr = []
+            // food.forEach((value) => {
+            //     value !== 'egg' ? newArr.push(value) : null
+            // });
+            // return newArr;
+            
+            return food.filter(value =>  value !== 'egg')
+        };
+        const remove1st2Egg = (food) => {
+            let isegg = 0;
+
+            const result =  food.filter(value =>  {
+                // increase the number of time egg appears;
+                if (value === 'egg') {
+                    isegg++;
+                };
+                // if value is egg and the time value has equal to egg is not up to 2, don't add it in the returning array(return false); 
+                if (value === 'egg' && isegg <= 2) {
+                    return false;
+                };
+                // add other values in the array to be returned
+                return true;
+            });
+            return result;
+        };
+
+        console.log(removeEgg(['egg', 'beans', 'egg', 'apple', 'grape']));
+        console.clear();
+
+        console.log(remove1st2Egg(['egg', 'mango', 'egg', 'pinapple', 'egg', 'apple', 'grape']));
+        </script>
+</body>
+</html>

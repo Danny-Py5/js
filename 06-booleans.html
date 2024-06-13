@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+<body>
+    <script>
+        /*
+        console.log(4 <= 5);
+        console.log(typeof(true));
+        // oga, we don't use '==' here no be python you dey :) use === 
+        // if you use == it will convert to same type and expresstion like this will be true 'console.log(5 == '5.0')' 
+        console.log(6 === 6);
+        console.log(5 !== '5.0');
+
+        if (false) {
+            console.log('hello true')
+        }else{
+            console.log('else statement got executed')
+        }
+
+        if (15 >= 16) {
+            console.log('you can drive');
+        }else if (15 >= 14) {
+            console.log('Almost in there!')
+        }else{
+            console.log('you can not drive');
+        } 
+
+        console.log(6 > 5 && 6 > 4); */
+
+        /*//truthy and falsy
+
+        if (0) {
+            console.log('truthy');
+        }else{
+            console.log(0, "falsy");
+        }
+        console.log(!0);
+
+        console.log('text'/5) //NaN  (invalid math operation)
+
+        var variable;  // undefined (might want to use it later)
+        console.log(variable)*/
+        
+        // ternary operation
+        const isTrue = 66 > 44 ? 'truty' : 'falsy';
+        console.log(isTrue);
+
+        // guard operator
+        const msg = 5 === 4 && 'hello';
+        console.log(msg);
+
+        // default operator
+        const currency =  'Naira'|| 'USD';
+        console.log(currency);
+
+        const current = undefined || 'USD'
+        console.log(current);
+
+        const yesNo = 44 > 6 ? 'Yes' : 'No';
+        console.log(yesNo);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

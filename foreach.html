@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+</head>
+<body>
+    <script>
+        const array = [
+        'Good morning', 
+        'How are you doing?',
+        'Js is awesome', 
+        'I love Js, Python'
+       ]
+       
+        array.forEach(function(value, index){
+            console.log(value, 'is in index:', index);
+        });
+
+        array.forEach((value, index) => {
+            console.log(value, ':', index)  
+        });
+    </script>
+</body>
+</html>

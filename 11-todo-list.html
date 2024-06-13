@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/11-todo-lilst.css">
+    <title>Todo list</title>
+</head>
+<body>
+    <main> 
+        <section class="container">
+            <h1>Todo list</h1>
+            <section class="inputs-container">
+                <input onkeydown="handleEnter(event)" class="js-todoname" placeholder="Todo name">
+                <input class="js-date-input" value="2021-04-05" type="date" name="date" id="date">
+                <button class="add-todo" onclick="addTodo()">Add</button>
+            </section>
+
+            <section class="js-todo-container todo-container"></section>
+        </section>
+    </main>
+    <script src="scripts/11-todo-list.js"></script>
+</body>
+</html>

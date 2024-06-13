@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 10</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+        button{
+            padding: 8px 12px;
+            background-color: #dadada;
+            border: none;
+            border-radius: 8px;
+            font: 1rem Arial;
+            font-weight: bold;
+        }
+        .gaming{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <button class="js-gaming" onclick="isGaming('js-gaming')">Gaming</button>
+        </section>
+
+        <section>
+            <button class="js-gaming1" onclick="isGaming2()">Gaming</button>
+            <button class="js-gaming1" onclick="isGaming2()">Music</button>
+            <button class="js-gaming1" onclick="isGaming2()">Tech</button>
+        </section>
+
+        <section>
+            <button></button>
+            <button></button>
+            <button></button>
+        </section>
+    </main>
+    <script>
+        let isgaming = true;
+        function isGaming(className) {
+            let isgamingElem = document.querySelector(`.${className}`)
+
+            if (isgaming === true) {
+                isgamingElem.classList.add('gaming');
+                isgaming = false;
+            } else {
+               isgamingElem.classList.remove('gaming');
+               isgaming = true;
+            }
+        }
+        function isGaming2() {
+            let elem = document.querySelector('.js-gaming1');
+            elem.classList.add('gaming');
+        }
+        
+        // thinking  capacity very low. cant finished it 
+    </script>
+</body>
+</html>

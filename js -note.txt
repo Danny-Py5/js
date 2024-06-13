@@ -1,0 +1,168 @@
+TO GENERATE RANDOM NUMBER
+-------------------------
+to generate a random number in js, use Math.random(); this func randomly choose between 0 and 1 --> compare to python where i need to import the random module before any use of random choose 
+# python --> random.randint()  
+# js --> Math.random();
+
+AND AND OR 
+----------
+in js the and operator is && and the or operator is ||
+
+VARIABLE ACCESS
+---------------
+If variable are created in the curly bracket, it can only be accessed in the burly brases only. so to access a variable comfortabley, create it outside of the curlsy bracket
+
+GUARD OPERATOR
+--------------
+const value = 55 && 'Hello';
+this examples means if true, hello should be saved in the value variable. Just the same as saying 
+ if (condition) {
+    msg = "Hello";
+ }
+
+-------------------------------
+function myFunction() {
+   console.log('hello');
+}
+## this code only create a funtion it don't run the code inside it 
+
+myFunction()
+# calling the funtion makes the code in the function to be run or executed.
+-------------------------------
+
+
+syntax rule of object
+----------------
+to create an object, we start with a { and close with a } inside the objcet we can put multiple values for each values, the code on the left is called the property, we separate the property and value with a column and this is called a property value pair. We can have many property value pairs and an object and we separate them with a comma. To asses a value inside the object, we type the object name and then a . and then the property we want to asses this will give us the value associated with the name property and we can also use the system used in python dict() -> mydict['key']. this syntax is called a bracket notation. if we asses a property that doesn't exist, the value will be undefined. To change a value in a objcet, we can just type the object name again and a . then the property we want to  change and asign another value to it like this myobject.property = 'new value';. using this syntax, we can also add another property to the object to do this, we say: myobject.newProperty and make it = to something else.
+   To delete property in the an objcet, we can 
+type delete objcet.newProperty; this will delete the newProperty property.   
+
+------------------------------------------------------------
+bracket notation helps us to use the properties that are not available with the dot notation i.e
+obj = {
+   ['first-name]: 'Daniel'
+   //  we can remove the brackets.
+};
+if we use obj.first-name, js will think we are trying to do math but using obj['first-name'] will enable us to access the first-name value.
+
+NOTE: when we save function inside an object, it is called method
+-----------------------------------------------------------
+
+
+
+                                       
+to save value in the localstorage, use localStorage.setItem('name of what to save', 'what to save')
+
+to get it value back, use localStorage.getItem('name of item to get');
+
+-----|
+Fact |
+-----|
+Y da good to save something in the local storage: it keeps value safe when we refresh the page. Value kept in local storage will never be lost untill we manually clear or delete it
+
+
+DOM (Document Object Model)
+_---------------------------
+it helps us to take the full control of our web page. with the use of dom we can customize our browser as we want. we can change the innerHTML of a particular element we can't i.e <body>, <button>, <aside>, <section> etc. And we can as well use it methods to change the behaviour or an element like the quarySelector, getElementById, getElementByName, etc. 
+
+
+
+in object in js we don't compare the value an object is holding we compare their reference. for example
+
+const obj1 = {
+   name: 'Daniel'
+};
+const obj2 = {
+   name: 'Daniel'
+};
+when we say obj1 === obj2, it will for sure result into false even they have the same value in them. we can only compare two objs to give true only when they point to the each other like this 
+
+obj2 = obj1 =====> this makes obj2 to points to same place obj1 points in the computer's memory. and comparing them that obj2 === ob1 will then return into true
+
+
+# log(event) to see event property
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+clearInterval: stopes an intervalId
+......... E.G ...................
+const intervalId;
+
+intervalId = setInterval(function() {
+   console.log(7)
+}, 5000);
+october
+we will want to stop the interval under a condition by saying 
+clearInterval(intervalId);
+
+by this we have successfully stopped the interval function
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+when we are passing a function into another function, it is the best practice to use arrow function. ie 
+
+setInterval(() => {
+   console.log(5555);
+}); 
+
+or when using a forEach loop
+.forEach((value, index) => {
+   ...
+})
+................................................................
+
+const object2 = {
+   method: () => {
+      // not the best way of defining a method in an object
+   }, 
+
+   method1: function myFunction() {
+      // not the best way either
+
+      since we will access the method using 
+         'object2.method()', the statement function myFunction() is not nessesary. the below method is the best way.
+   },
+
+   method() {
+      // best way to define a function in an object
+   }
+};
+
+
+NOTE
+----
+It is best practice to use eventListener than using onclick attr 
+
+
+// filter
+/* arr.filter((value, index) => {
+   filter returns only true and false under a specific condiction. 
+
+   it also loops through the array it is used with 
+   // eg
+   in this example case, it will loop through the 'arr' array and give each item in it to the ('value param') and it index to the ('index param') in the arrow function in it(that is, the arrow function in the forEach functio()) in each iteration.
+   
+   if (value === something){
+         return false; will remove the value that is === to that 'something' in that arr at that iteration and will not add it to the new array that is going to be returned by the filter function.
+   } else {
+         return true; will add the value into the new array that is going to be returned
+   }
+}) 
+
+arr.filter((value, index) => {
+   return true; this will include all the value in the arr to the new array that is going to be returned by the filter function.
+})
+arr.filter((value, index) => {
+   return false; this will not include all the value in the arr to the new array that is going to be returned by the filter function.
+})
+
+*/
+
+
+
+ # continue from 6:50 in the video
+
+
+
+

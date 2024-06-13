@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9 Exercises</title>
+    <style>
+        body{
+            background-color: rgb(19, 2, 2);
+            color: wheat;
+        }
+        button{
+            background-color: rgb(255, 227, 191);
+            border: none;
+            margin: 5px;
+            padding: .4rem 1rem;
+            border-radius: 16px;
+        }
+        section{
+            background-color: rgba(255, 122, 65, 0.425);
+            padding: 1.5rem .5rem; 
+            border-radius: 20px;
+            border: none;
+            margin-bottom: 1rem;
+        }
+        .input{
+            width: clamp(40%, 80vw, 60%);
+            outline: none;
+            border-radius: 12px;
+            border: none;
+            padding: .4em;
+            font-size: inherit;
+        }
+        #submit{
+            padding: .5em 1em;
+            border-radius: 10px;
+            background-color: rgb(0, 128, 17);
+            color: white;
+            border: none;
+
+            
+        }
+    </style>
+</head>
+<body>
+    <button>9a</button>
+    <button class="js-9b-button">9b</button>
+    <br>
+    <button class="js-head" onclick="showClick('head')">Head</button>
+    <button class="js-tail" onclick="showClick('tail')">Tail</button>
+    <p class="js-p" style="transform: translateY(20px);"></p>
+
+    <section>
+        <input type="text" name="name" id="name" placeholder="Name" autocomplete='off' max="15" onkeydown="handleNameKeyDown(event)" class="js-user-name input"><br><br>
+        <input type="submit" name="submit" id="submit" onclick="displayUserName()">
+        <p class="js-username-label"></p>
+    </section>
+    <section>
+        <input onkeypress="showCurrentWord(event)" class="js-onkeyup-input input" type="text" >
+        <p class="js-onkeyup-label"></p>
+    </section>
+    <script>
+        // 9a
+        window.console.log(window.document.querySelector('button'))
+
+        //9b
+        document.querySelector('.js-9b-button').textContent = '9b done!';
+
+        // 9g
+        function showCurrentWord() {
+            window.document.querySelector('.js-onkeyup-label')
+                .textContent = window.document.querySelector('.js-onkeyup-input').value
+        }
+        // 9d
+        function displayUserName(isEnterKey=false){
+            let userName = window.document.querySelector('.js-user-name').value;
+
+            window.document.querySelector('.js-username-label').textContent = `${userName !== '' ? `Your name is ${userName}`: 'Please input your name.'}`;
+            applyStyles(document.querySelector('.js-username-label'))
+        }
+        
+        function handleNameKeyDown(event) {
+            if (event.key === 'Enter')
+                displayUserName();
+            // window.console.log(event);
+        }
+        // 9c
+        function applyStyles (paraElem) {
+            paraElem.style.color = 'lightblue';
+            paraElem.style.fontSize = '1rem';
+            paraElem.style.transform = `${Number(paraElem.style.transform.replace('translateY(','').replace('px)', '')) === 0 ? 'translateY(20px)' : 'translateY(0px)'}`
+            paraElem.style.transition = 'all .5s linear'
+        }
+        function showClick(clickedButton) {
+            let paraElem = document.querySelector('.js-p');
+
+            if (clickedButton === 'head') {
+                paraElem.textContent = 'You choose: Head';
+
+                // change color of the paragraph
+                applyStyles(paraElem) 
+
+            } else if (clickedButton === 'tail') {
+                paraElem.textContent = 'You choose: Tail';
+                
+                // change color of the paragraph
+                Object.assign(paraElem.style, {
+                    color: 'lightpink',
+                    fontSize: '1rem',
+                    transform: `${Number(paraElem.style.transform.replace('translateY(','').replace('px)', '')) === 20 ? 'translateY(0px)' : 'translateY(20px)'}`,
+                    transition: 'all .5s linear',
+                })
+                // console.log(paraElem.style.transform.replace('translateY(','').replace('px)', ''));
+            }
+        }
+        // console.log(Object.assign)
+    </script>
+</body>
+</html>

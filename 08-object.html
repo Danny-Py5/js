@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        /*
+        const product = {
+            name: 'socks',
+            price: 1090
+        };
+        console.log(typeof(product));  // object
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+
+        product.name = 'cutton socks';
+        console.log(product)
+
+        // add to the product a new property with a value
+        product.newProperty = true;
+        console.log(product);
+
+        // delete the newProperty property
+        delete product.newProperty;
+        console.log(product); */
+
+        /*
+        const product2 = {
+            name: 'shirt',
+            'age': 432,
+            //an object can also have another object inside it
+            rate: {
+                star: 5.5,
+                count: 3
+            },
+            // also it can also have a funtion(method) inside it.
+            func: function myfunc() {
+                console.log('function inside an object');
+            }
+
+        };
+        console.log(product2);
+        console.log(product2.name);
+        // using dict method in python :)
+        console.log(product2['name']);
+       
+        // getting the nexted object in product object
+        console.log(product2.rate.count); // or
+        console.log(product2.rate['count']);
+       
+        // using the function in product2 object
+        product2['func']();
+        product2.func();
+        
+        console['log']('hello');
+        console.log(typeof console.log);
+
+        // JSON 
+        // convert product to a json
+        jsonString = JSON.stringify(product2);
+        console['log'](jsonString);
+
+        // convert a json string back to a js object
+        jsObject = JSON.parse(jsonString);
+        console.log(jsObject);
+        */
+
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+
+        const object1 = {
+            message: 'Good job!'
+        };
+
+        object2 = object1;
+
+        object1.message = 'Good job!'
+        console.log(object1);
+        console.log(object2);
+
+        const object3 = {
+            message: 'Good job!'
+        };
+        // references
+        console.log(object3 === object1);
+        console.log(object2 === object1);
+
+        const object4 = {
+            message: 'Good job!',
+            price: 799
+        };
+        // get out message property form object4
+        // const message = object4.message; 
+        // or if u like to retrive more than one or even one if the new variable name to be created(const message) is same as the name of property(message in object4) in the object, we can just use this method called destructuring shortcut. it is an easer way to take property(ies) out of an object
+        const {message, price} = object4;
+        console.log(message);
+        console.log(price)
+
+        // shorthand property/method
+        const object5 = {
+            // message: message 
+            // or we can just say 
+            message,
+            another: 'Another property value in object5',
+            method1: function function1() {
+                console.log('method1');
+            },
+            // we don't actuall need to write function, we can just write the function name;
+            method2(){
+                console.log('method2');
+            }
+        }
+        console.log(object5.method2())
+
+        // excercises
+        // create product object
+        const product = {
+
+            name: 'Basketball',
+            price: 2095,
+
+            comparePrice(product1, product2){
+                // return 
+                if (product1.price > product2.price){
+                    return JSON.stringify(product1.price) + '  product1';
+                } else if (product1.price < product2.price){
+                    return JSON.stringify(product2.price) + '  product2';
+                }
+            }
+        };
+        console.log('product =', product);
+        // increate price property of product
+        product.price = product.price + 500;
+        console.log(product)
+        // add new property to product
+        product['delivery-time'] = '3days';
+        console.log(product);
+
+        const product2 = {
+            name: 'Basketball',
+            price: 4444,
+        }
+        
+        console.log(product.comparePrice(product, product2));
+
+        function isSameProduct(product1, product2){
+            if (product1.name === product2.name && product1.price == product2.price) {
+                return true
+            } else {
+                return false
+            }
+        }
+        const nProduct1 = {
+            name: 'car', 
+            price: 5000
+        }
+        const nProduct2 = {
+            name: 'car', 
+            price: 5000
+        }
+        console.log(isSameProduct(nProduct1, nProduct2))
+        
+        // string methods
+        const stringWord = 'Hello World!'
+        console.log(stringWord.toLowerCase())
+
+        console.log(stringWord.endsWith('!'))
+        console.log('\n')
+
+    </script>
+</body>
+</html>

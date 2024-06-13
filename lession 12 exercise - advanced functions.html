@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced functions exercise</title>
+    <style>
+        button{
+            padding: .5rem 1rem;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="makeFinished()" id="start">Start</button>
+    <br>
+    <hr>
+    <button onclick="addToCart()" class="js-addto">Add to Cart</button>
+    <button class="add" id="add">Add</button>
+    <button class="remove">Remove</button>
+    <p class="js-show-msg"></p>
+    <script>
+        function add() {
+            return function add () {
+                console.log(3 + 3)
+            }
+        }
+        add()()
+
+        // 12b
+        function runTwice(func){
+            func()
+            func()
+        }
+        runTwice(function(){
+            console.log('12b')
+        })
+
+        // 12c
+        const makeFinished = function(){
+            const starElem = document.getElementById('start');
+            if (starElem.innerText === 'Start') {
+                starElem.innerText = 'Loading...';
+                setTimeout(function (){
+                    starElem.innerText = "Finised."
+                }, 1000);
+            } else{
+                setTimeout(function(){
+                    starElem.innerText = "Start"
+                }, 1000)
+            }
+
+        }
+        let timer;
+        const addToCart = function () {
+            clearTimeout(timer);
+            const addToCartElem = document.querySelector('.js-show-msg');
+
+            addToCartElem.innerText= 'Added';
+            // remove the text after 1seconds
+            timer = setTimeout(function() {
+                addToCartElem.innerText = '';
+            }, 2000)
+
+        }
+
+        // 2g
+        let msg = 0;
+        function changeTitile() {
+            setInterval(function(){
+                const random = Math.random();
+                random > 0.5 ? document.title = `(${msg}) New message` : document.title = 'App'
+            }, 1000);
+            // when add button is clicked
+            document.querySelector('.add').addEventListener('click', function(){
+                msg++
+            });
+            // when remove button is clicked
+            document.querySelector('.remove').addEventListener('click', function(){
+                msg--
+            });
+        };
+        changeTitile();
+    
+    </script>
+</body>
+</html>
