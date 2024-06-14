@@ -149,6 +149,9 @@
   margin-right: 5px;
 }
 
+.show-added-to-cart-popup{
+  opacity: 1;
+}
 .add-to-cart-button {
   width: 100%;
   padding: 8px;

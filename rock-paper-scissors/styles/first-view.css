@@ -1,0 +1,113 @@
+* {
+    box-sizing: 0;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --main-bg-color: rgb(31, 31, 31);
+    --msg-bg-color:  rgba(77, 76, 76, 0.897);
+    --background-color: rgb(0, 0, 0);
+}
+body{
+    font: 1rem Arial;
+    color: white;
+    background-color: var(--background-color);
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* utility */
+.center-items{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.z-index-2{
+    z-index: 2;
+}
+/* utility ends */
+
+main{
+    /* background-color: var(--main-bg-color); */
+    padding: .5rem;
+    background-image: url('../img/scissors.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50%;
+    flex-direction: column;
+    position: relative;
+    /* background-color: rgba(63, 63, 63, 0.459); */
+}
+
+.title{
+    font-size: 20px;
+    color: gold;
+    margin-bottom: 50px;
+}
+.actions-container{
+    width: 100%;
+    justify-content: space-around;
+}
+
+.cover-img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000ab
+}
+
+button{
+    font-size: inherit;
+    padding: 5px 20px;
+    border: 1.5px solid black;
+    background-color: #ffffff8e;
+}
+.play{
+    transition: .5s;
+}
+.play:hover{
+    color: white;
+    background-color: #ffffff5d;
+}
+.play:active{
+    background-color: #ffffff38;
+    color: white;
+}
+
+.exit{
+    border-color: rgba(245, 245, 245, 0.596);
+    background-color: transparent;
+    color: rgb(179, 179, 179);
+    position: relative;
+    overflow: hidden;
+}
+
+div{
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color:rgb(165, 1, 1);
+    height: 100%;
+    position: absolute;
+    transition: .5s;
+    border-radius: 0px 40px 40px 0;
+    z-index: -1;
+}
+
+.exit:hover div{
+    width: 120%; 
+}
+.exit:active div{
+    opacity: .3;
+}
+
+
+@keyframes animate-exit-fill-right {
+    0%{
+        background-color: re;
+    }
+}
+
+
+

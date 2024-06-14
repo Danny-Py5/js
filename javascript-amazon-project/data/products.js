@@ -1,4 +1,14 @@
-const products = [
+export function getProduct(productId){
+  let matchingProduct;
+  products.forEach((product) =>{
+    if (product.id === productId){
+        matchingProduct = product;
+    };
+  });
+  return matchingProduct;
+};
+
+export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -650,6 +660,38 @@ const products = [
       count: 3157
     },
     priceCents: 2400,
+    keywords: [
+      "sweaters",
+      "hoodies",
+      "apparel",
+      "mens"
+    ]
+  },
+  {
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "backpack bag New",
+    rating: {
+      stars: 5,
+      count: 3757
+    },
+    priceCents: 7700,
+    keywords: [
+      "sweaters",
+      "hoodies",
+      "apparel",
+      "mens"
+    ]
+  },
+  {
+    id: "id2",
+    image: "images/products/umbrella.jpg",
+    name: "Umbrella",
+    rating: {
+      stars: 4,
+      count: 4444
+    },
+    priceCents: 3400,
     keywords: [
       "sweaters",
       "hoodies",
