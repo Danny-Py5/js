@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles/rock-paper.css">
+</head>
+<body>
+    <header>
+        <button class="js-show-score transparent" onclick="showScoreOrHide('show')" >Show score</button>
+        <button onclick="showScoreOrHide('hide')" class="js-hide-score transparent">Hide score</button>
+    </header>
+    <main> 
+        <p class="title">Rock Paper Scissors</p>
+        <section class="rockpaperscissors-cont">
+            <button class="js-rock-button emoji-button bounce1">
+                <img src="img/rock.png" alt="rock-emoji">
+            </button>
+        
+            <!-- paper section -->
+            <button class="js-paper-button emoji-button bounce2">
+                <img src="img/paper.png" alt="paper-emoji">
+            </button>
+
+            <!-- scissors section -->
+            <button class="js-scissors-button emoji-button bounce3"> 
+                <img class="scissors" src="img/scissors.png" alt="scissors-emoji">
+            </button>
+        </section>
+        <p class="display-win result"></p>
+        <p class="display-player-move "></p>
+        <p class="display-score"></p>
+
+        <button class="js-reset-button reset-button">Reset Score</button> 
+        <button class="js-auto-play reset-button">Auto Play</button>
+        <section class="askyesno-container js-askyesno-container">
+        </section>
+    </main>
+    <script src="scripts/rock-paper.js"></script>
+</body>
+</html>

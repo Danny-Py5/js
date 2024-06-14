@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --rock-paper-main-bg-color: rgb(31, 31, 31);
+    --msg-bg-color:  rgba(77, 76, 76, 0.897);
+    --background-color: rgb(0, 0, 0);
+}
+header{
+    /* background-color: blue; */
+    width: 100%;
+    /* position: fixed;
+    top: 0; */
+    padding: .5rem;
+
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+.center-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.transparent{
+    background-color: transparent;
+    color: white;
+    border: none;
+    font: inherit;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+.transparent:hover{
+    opacity: .7;
+}
+p{
+    margin: 5px;
+}
+body{
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* align-content: flex-start; */
+    flex-direction: column;
+    /* height: 100vh; */
+    width: 100%;
+
+    font-size: 1.1rem;
+}
+main{
+    background-color: rgb(31, 31, 31);
+    padding: 1rem;
+    border-radius: .5rem;
+    margin-top: 40px;
+    position: relative;
+
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: gold;
+}
+.emoji-button{
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 1s;
+}
+.emoji-button:active, .emoji-button:focus{
+    background-color: rgba(255, 251, 0, 0.267);
+    scale: 1.1 1.1;
+}
+img{
+    width: clamp(50px, 10vw, 120px);
+    height: clamp(50px, 10vw, 120px); 
+    object-fit: contain;
+}
+.rockpaperscissors-cont{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 90%;
+    justify-content: space-around;
+    /* background-color: rgba(27, 0, 0, 0.212); */
+    padding: 1rem;
+}
+.result{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 50px 0 20px;
+}
+.reset-button{
+    padding: .8rem;
+    font: inherit;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.397);
+    border: none;
+    border-radius: 8px;
+    /* font-weight: bold; */
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+.reset-button:hover{
+    outline: 2px solid rgb(255, 255, 255);
+    outline-offset: -5px;
+}
+.reset-button:active{
+    box-shadow: 2px 2px 5px rgb(15, 15, 15);
+}
+.display-player-move{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.display-player-move .moves-emoji{
+    width: 40px;
+    height: 40px;
+}
+.askyesno-container{
+    transition:  all 1s;
+    top: 50%;
+    padding: 10px;
+    margin: auto;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    margin: auto;
+    background-color: var(--msg-bg-color);
+    width: 60%;
+    display: none;
+}
+.askyesno-container :where(p, button){
+    font-size: .8rem;
+}
+.askyesno-container button{
+    border-radius: 5px;
+    border: none;
+    margin-right: 5px;
+    padding: 5px 10px;
+    transition: all .25s;
+}
+.msg{
+    margin-bottom: 20px;
+}
+.yes{
+    background-color: rgb(255, 34, 34);
+    color: white;
+}
+.yes:hover{
+    background-color: rgba(255, 34, 34, 0.562);
+}
+.no:hover{
+    background-color: rgba(255, 255, 255, 0.589);
+}
+
+.bounce1{
+    animation: bounce 15s linear infinite;
+}
+.bounce2{
+    animation: bounce 18s linear infinite;
+}
+.bounce3{
+    animation: bounce 15s linear infinite;
+}
+/* animate result: works when a move(rock,paper, scissors) is clicked. a class animate-result is added when the move is clicked*/
+.animate-result{
+    animation: animateResult 1s linear;
+    transition: all 1s;
+}
+@keyframes animateResult {
+    0%{
+        transform: translateX(-10px);
+    }
+    50%{
+        transform: translateX(10px);
+    }
+}
+@keyframes bounce {
+    0%, 30%, 60%, 80%{
+        transform: translateY(0);
+    }
+    20%{
+        transform: translateY(10px);
+    }
+    40%{
+        transform: translateY(8px);
+    }
+    50%{
+        transform: translateY(6px);
+    }
+    70%{
+        transfrom: translateY(5px);
+    }
+    90%{
+        transform: translateY(4px);
+        
+    }
+} 
